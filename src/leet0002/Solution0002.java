@@ -31,6 +31,11 @@ public class Solution0002 {
                 tmpNode = tmpNode.next;
             }
         }
+
+        if (bit != 0) {
+            tmpNode.next = new ListNode(bit);
+        }
+
         return root;
     }
 
