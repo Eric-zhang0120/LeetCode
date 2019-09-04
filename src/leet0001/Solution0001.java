@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Solution {
+public class Solution0001 {
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -21,6 +21,6 @@ public class Solution {
         Scanner in = new Scanner(System.in);
         int[] nums = {2, 7, 11, 15};
         int target = 9;
-        System.out.println(Arrays.toString(new Solution().twoSum(nums, target)));
+        System.out.println(Arrays.toString(new Solution0001().twoSum(nums, target)));
     }
 }
