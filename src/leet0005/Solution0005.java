@@ -23,7 +23,7 @@ public class Solution0005 {
     }
 
     private int expendAroundCenter(String s, int left, int right) {
-        while (left > 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
             left--;
             right++;
         }
@@ -32,7 +32,8 @@ public class Solution0005 {
     }
 
     public static void main(String[] args) {
-        String s = "abcdddcbe";
+        //String s = "abcdddcbe";
+        String s = "aa";
         System.out.println(new Solution0005().longestPalindrome(s));
     }
 }
