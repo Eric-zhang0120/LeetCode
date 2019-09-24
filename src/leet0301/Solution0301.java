@@ -20,13 +20,16 @@ public class Solution0301 {
 
         //遍历整个字符串，记录未匹配的左右括号数
         for (char c : s.toCharArray()) {
-            if (c == '(')
+            if (c == '(') {
                 left++;
+            }
+
             else if (c == ')') {
-                if (left > 0)
+                if (left > 0) {
                     left--;
-                else
+                } else {
                     right++;
+                }
             }
         }
 
@@ -45,14 +48,16 @@ public class Solution0301 {
         //cnt记录字符串中未匹配的括号数
         int cnt = 0;
         for (char c : s.toCharArray()) {
-            if (c == '(')
+            if (c == '(') {
                 cnt++;
-            else if (c == ')')
+            } else if (c == ')') {
                 cnt--;
+            }
 
             //右括号数量多于左括号，提前终止循环
-            if (cnt < 0)
+            if (cnt < 0) {
                 return false;
+            }
         }
         return cnt == 0;
     }

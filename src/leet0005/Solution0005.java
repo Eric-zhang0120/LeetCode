@@ -2,19 +2,23 @@ package leet0005;
 
 public class Solution0005 {
     public String longestPalindrome(String s) {
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return "";
+        }
 
         int start = 0, end = 0;
         for (int i = 0; i < s.length(); i++) {
             //查找两次是为了避免abcdddcbe，len1=7,len2=2
-            int len1 = expendAroundCenter(s, i, i);  //回文子串长度为奇数时
-            int len2 = expendAroundCenter(s, i, i + 1); //回文子串长度为偶数时
+            //回文子串长度为奇数时
+            int len1 = expendAroundCenter(s, i, i);
+            //回文子串长度为偶数时
+            int len2 = expendAroundCenter(s, i, i + 1);
             int len = Math.max(len1, len2);
 
             //计算回文子串在原串的索引
             if (len > end - start) {
-                start = i - (len - 1) / 2; //这里len-1是为了避免i-len/2时前移了一个单位
+                //这里len-1是为了避免i-len/2时前移了一个单位
+                start = i - (len - 1) / 2;
                 end = i + len / 2;
             }
         }
