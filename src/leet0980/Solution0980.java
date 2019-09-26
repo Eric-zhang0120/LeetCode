@@ -1,15 +1,15 @@
 package leet0980;
 
 public class Solution0980 {
-    int ans = 0;
-    int[][] grid;
-    int tr, tc;
+    private int ans = 0;
+    private int[][] grid;
+    private int tr, tc;
     /**
     * dr[i]+dc[i]表示下一步的方向（上下左右）
     **/
-    int[] dr = new int[]{0, -1, 0, 1};
-    int[] dc = new int[]{1, 0, -1, 0};
-    int row, col;
+    private int[] dr = new int[]{0, -1, 0, 1};
+    private int[] dc = new int[]{1, 0, -1, 0};
+    private int row, col;
 
     public int uniquePathsIII(int[][] grid) {
         this.grid = grid;
