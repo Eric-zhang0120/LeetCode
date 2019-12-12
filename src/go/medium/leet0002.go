@@ -1,10 +1,4 @@
-package main
-
-import (
-	"fmt"
-	"strconv"
-	"strings"
-)
+package medium
 
 type ListNode struct {
 	Val  int
@@ -49,45 +43,4 @@ func addTwoNumbers(l1, l2 *ListNode) *ListNode {
 		tmpNode.Next = &ListNode{Val: bit}
 	}
 	return root
-}
-
-func buildList(s string) (root *ListNode) {
-	var temp *ListNode
-	strs := strings.Split(s, ",")
-	for _, v := range strs {
-		t, e := strconv.Atoi(v)
-		if e != nil {
-			fmt.Errorf("Atoi出错")
-			return
-		}
-
-		if root == nil {
-			root = &ListNode{Val: t}
-			temp = root
-		} else {
-			temp.Next = &ListNode{Val: t}
-			temp = temp.Next
-		}
-	}
-	return
-}
-
-func printList(list *ListNode) {
-	s := make([]int, 0)
-	for list != nil {
-		s = append(s, list.Val)
-		list = list.Next
-	}
-	fmt.Println(s)
-}
-
-func main() {
-	var s1, s2 string
-	fmt.Scan(&s1)
-	fmt.Scan(&s2)
-
-	l1 := buildList(s1)
-	l2 := buildList(s2)
-	l := addTwoNumbers(l1, l2)
-	printList(l)
 }
