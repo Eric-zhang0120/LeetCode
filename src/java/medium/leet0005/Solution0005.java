@@ -2,7 +2,7 @@ package medium.leet0005;
 
 public class Solution0005 {
     public String longestPalindrome(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.length() < 2) {
             return "";
         }
 
